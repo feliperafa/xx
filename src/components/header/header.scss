@@ -1,0 +1,135 @@
+#header {
+  background-image: radial-gradient(
+    circle at 50% -20.71%,
+    #ffffa1 0,
+    #f5ffa0 6.25%,
+    #e4ffa0 12.5%,
+    #d2ffa1 18.75%,
+    #bdffa3 25%,
+    #a7fda6 31.25%,
+    #8cfaaa 37.5%,
+    #6cf7af 43.75%,
+    #3cf2b5 50%,
+    #00edbc 56.25%,
+    #00e8c6 62.5%,
+    #00e4d0 68.75%,
+    #00dfdc 75%,
+    #00dbe9 81.25%,
+    #00d7f5 87.5%,
+    #00d3ff 93.75%,
+    #00d0ff 100%
+  );
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 90%;
+    margin: auto;
+
+    img {
+      width: 50px;
+      margin-left: 20px;
+      padding: 15px 0;
+    }
+    .menu-section {
+      nav {
+        ul {
+          display: flex;
+          li {
+            list-style: none;
+            a {
+              text-decoration: none;
+              color: #453f3c;
+              text-transform: uppercase;
+              font-size: 1.4rem;
+              padding: 24px;
+              transition: all 250ms linear 0s;
+            }
+            &:hover {
+              background: rgba(255, 255, 255, 0.15);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// @media (max-width: 580px) {
+//   .container{
+//     .menu-section{
+//       .menu-toggle {
+//         width: 40px;
+//         height: 30px;
+//         margin-right: 20px;
+
+//         .one,
+//         .two,
+//         .three {
+//           background-color: #fff;
+//           height: 5px;
+//           width: 100%;
+//           margin: 6px auto;
+
+//           transition-duration: 0.3s;
+//         }
+//       }
+//     }
+//   }
+// }
+//   nav {
+//     display: none;
+//   }
+
+//   /* FullScreen */
+//   .menu-section.on {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+
+//     width: 100vw;
+//     height: 100vh;
+
+//     background-color: #7159c1;
+
+//     z-index: 10;
+
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//   }
+
+//   .menu-section.on nav {
+//     display: block;
+//   }
+
+//   .menu-section.on .menu-toggle {
+//     position: absolute;
+//     right: 30px;
+//     top: 15px;
+//   }
+
+//   .menu-section.on .menu-toggle .one {
+//     transform: rotate(45deg) translate(7px, 7px);
+//   }
+
+//   .menu-section.on .menu-toggle .two {
+//     opacity: 0;
+//   }
+
+//   .menu-section.on .menu-toggle .three {
+//     transform: rotate(-45deg) translate(8px, -9px);
+//   }
+
+//   .menu-section.on nav ul {
+//     text-align: center;
+//     display: block;
+//   }
+
+//   .menu-section.on nav ul a {
+//     transition-duration: 0.5s;
+//     font-size: 3rem;
+//     line-height: 4rem;
+//     display: block;
+//   }
+// }
