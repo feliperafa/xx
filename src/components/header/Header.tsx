@@ -13,8 +13,10 @@ export function Header() {
     <div id="header">
       <header>
         <div className="container">
+          <Link to="/app">
           <img src={LogoImg} alt="Logo" />
-          <div className={cx("menu-section ", { show: show ? "show" : "" })}>
+          </Link>
+          <div className={cx("menu-section", { show: show ? "show" : "" })}>
             <div
               className={cx("menu-toggle", { show: show ? "show" : "" })}
               onClick={() => setshow(!show)}
@@ -26,7 +28,7 @@ export function Header() {
             <nav>
               <ul>
                 <li>
-                  <Link to="#">Starter</Link>
+                  <Link to="/app/atendimento">Starter</Link>
                 </li>
                 <li>
                   <Link to="#">Bootcamp</Link>
