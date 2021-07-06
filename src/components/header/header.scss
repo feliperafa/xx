@@ -24,6 +24,7 @@
     align-items: center;
     justify-content: space-between;
     width: 90%;
+    height: 10vh;
     max-width: 90%;
     margin: auto;
 
@@ -33,11 +34,17 @@
       padding: 15px 0;
     }
     .menu-section {
+      display: flex;
+      align-items: center;
+
       nav {
         ul {
           display: flex;
+          align-items: center;
+
           li {
             list-style: none;
+
             a {
               text-decoration: none;
               color: #453f3c;
@@ -51,6 +58,10 @@
             }
           }
         }
+      }
+      img {
+        width: 3.5rem;
+        border-radius: 50%;
       }
     }
   }

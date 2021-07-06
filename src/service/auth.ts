@@ -7,6 +7,7 @@ export function signin(): Promise<ResponseTypes> {
                 user: {
                     email: 'felipe@hotmail.com',
                     name: 'felipe',
+                    avatar:'/../images/felipe.png'
                 },
             })
         },1000)

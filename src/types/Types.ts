@@ -9,6 +9,7 @@ export interface FormType {
 export interface User{
     name:string;
     email:string;
+    avatar:string;
 }
 export interface AuthContexData {
     signed: boolean;
@@ -22,5 +23,5 @@ export interface AuthContexData {
 
 export interface ResponseTypes {
     token: string;
-    user: { name: string; email: string; };
+    user: { name: string; email: string; avatar: string;};
 }

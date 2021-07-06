@@ -3,6 +3,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 import { FaUserAlt, FaUserPlus } from "react-icons/fa";
 import ReactLoading from "react-loading";
+import Modal from "react-modal";
 
 import logoImg from "../../images/icon_f.svg";
 
@@ -17,6 +18,7 @@ const LoadProps = {
 };
 
 export function FormLogin() {
+  const [isModal, setIsModal] = useState(false)
   const typeProps = "bubbles";
   const { signInWow } = useAuth();
 
@@ -46,9 +48,13 @@ export function FormLogin() {
     }, 1500);
     // api.post(`/`)
   }
+  function closeModal(){
+    setIsModal(false)
+  }
 
   async function newUser(event: FormEvent) {
     event.preventDefault();
+    setIsModal(true)
     const { latitude = 1, longitude = 1 } = position;
 
     const data = {
@@ -66,9 +72,11 @@ export function FormLogin() {
 
     setshow(true);
   }
-
+  
   return (
     <div>
+      {isModal && <Modal id="teste1" isOpen={isModal} closeTimeoutMS={150}> 
+      <button onClick={closeModal}>Close</button> </Modal>}
       {show ? (
         <div id="page-login">
           <img src={logoImg} alt="logo" />

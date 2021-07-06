@@ -1,3 +1,11 @@
+.teste1{
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-Right: -50%;
+  transform: translate(-50%, -50%);
+}
 #page-login {
   display: flex;
   justify-content: center;
