@@ -13,7 +13,7 @@ export function Header() {
     <div id="header">
       <header>
         <div className="container">
-          <Link to="/app">
+          <Link to="/home">
           <img src={LogoImg} alt="Logo" />
           </Link>
           <div className={cx("menu-section", { show: show ? "show" : "" })}>
@@ -28,10 +28,10 @@ export function Header() {
             <nav>
               <ul>
                 <li>
-                  <Link to="/app/atendimento">Starter</Link>
+                  <Link to="/home">Home</Link>
                 </li>
                 <li>
-                  <Link to="#">Bootcamp</Link>
+                  <Link to="/home/atendimento">Atendimento</Link>
                 </li>
                 <li>
                   <Link to="#">Comunidade</Link>

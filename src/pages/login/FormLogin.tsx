@@ -1,46 +1,65 @@
 import { FormEvent, useState } from "react";
+import { useAuth } from "../../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 import { FaUserAlt, FaUserPlus } from "react-icons/fa";
+import ReactLoading from "react-loading";
 
 import logoImg from "../../images/icon_f.svg";
 
 import "./formLogin.scss";
 import api from "../../service/Api";
 
+const LoadProps = {
+  colorProps: "#00d0ff",
+  classProps: "button-loading",
+  heightProps: 50,
+  widthProps: 50,
+};
+
 export function FormLogin() {
+  const typeProps = "bubbles";
+  const { signInWow } = useAuth();
+
+  const [loading, setLoading] = useState(false);
+
   const [show, setshow] = useState(true);
   const history = useHistory();
-  /** Estado do Formulario ao iniciar */
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [position, setposition] = useState({latitude:1, longitude:1});
+  const [
+    position,
+    // setposition
+  ] = useState({ latitude: 1, longitude: 1 });
 
-  function singIn(event: FormEvent) {
+  function signIn(event: FormEvent) {
+    setLoading(true);
     event.preventDefault();
+    setTimeout(function () {
+      setLoading(false);
+    }, 1500);
 
-    history.push("/app");
+    setTimeout(function () {
+      signInWow();
+      history.push("/home");
+    }, 1500);
+    // api.post(`/`)
   }
+
   async function newUser(event: FormEvent) {
     event.preventDefault();
-    const {latitude = 1, longitude = 1} = position
-    // const data = new FormData();
+    const { latitude = 1, longitude = 1 } = position;
 
     const data = {
       name,
       email,
       password,
       longitude,
-      latitude
-    }
+      latitude,
+    };
 
-    // data.append('name', name);
-    // data.append('email', email);
-    // data.append('password', password);
-    // data.append('latitude', String(latitude));
-    // data.append('longitude', String(longitude));
-
-    console.log(data, 'to aqui Felipe')
+    console.log(data, "to aqui Felipe");
     await api.post("users", data);
 
     alert("Cadastro Realizado com Sucesso!");
@@ -53,17 +72,32 @@ export function FormLogin() {
       {show ? (
         <div id="page-login">
           <img src={logoImg} alt="logo" />
-          <form onSubmit={singIn}>
+          <form onSubmit={signIn}>
             <span>
               Sign In <FaUserAlt />
             </span>
             <input type="email" placeholder="E-mail" />
             <input type="password" placeholder="Password" />
-            <button type="submit">Entrar</button>
+            <button type="submit">
+              {/* Entrar */}
+              {loading ? (
+                <ReactLoading
+                  type={typeProps}
+                  className={LoadProps.classProps}
+                  color={LoadProps.colorProps}
+                  height={LoadProps.heightProps}
+                  width={LoadProps.widthProps}
+                />
+              ) : (
+                "Entrar"
+              )}
+            </button>
           </form>
           <div className="sing-out">
             Ainda não é cadastrado?
-            <Link to="javascript;;" onClick={() => setshow(!show)}>inscreva-se</Link>
+            <Link to="#" onClick={() => setshow(!show)}>
+              inscreva-se
+            </Link>
           </div>
         </div>
       ) : (
@@ -82,22 +116,6 @@ export function FormLogin() {
               value={name}
             />
 
-            {/* <input
-              id="latitude"
-              type="text"
-              placeholder="latitude"
-              onChange={(event) => setPosition(event.target.value)}
-              value={latitude}
-            /> */}
-
-            {/* <input
-              id="longitude"
-              type="text"
-              placeholder="longitude"
-              onChange={(event) => setLongitude(event.target.value)}
-              value={longitude}
-            /> */}
-
             <input
               id="email"
               type="email"
@@ -114,7 +132,9 @@ export function FormLogin() {
               value={password}
             />
             <div className="container-button">
-              <button type="button" onClick={newUser}>Cadastrar</button>
+              <button type="button" onClick={newUser}>
+                Entra
+              </button>
               <button type="button" onClick={() => setshow(!show)}>
                 Login
               </button>
