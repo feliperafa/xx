@@ -61,7 +61,7 @@ export function FormLogin() {
       name,
       email,
       password,
-      longitude,
+      longitude, 
       latitude,
     };
 
