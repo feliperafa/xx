@@ -1,4 +1,4 @@
-@media (max-width: 580px) {
+@media (max-width: 585px) {
   #header .container .menu-section nav ul {
     flex-direction: column;
   }
@@ -92,5 +92,9 @@
     font-size: 3rem;
     line-height: 4rem;
     display: block;
+  }
+
+  .container-link {
+    display: none;
   }
 }

@@ -1,10 +1,15 @@
-import { Header } from "../../components/header/Header";
+// import { useHistory } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
+
+import "./index.scss";
 
 export function Home() {
+  const { user } = useAuth();
+  // const history = useHistory();
+  console.log(user);
   return (
     <div id="page-home">
-      <Header />
-      <div>Bem Vindo a Page Home</div>
+      <h1>Welcome to Page Home {user?.name}</h1>
     </div>
   );
 }

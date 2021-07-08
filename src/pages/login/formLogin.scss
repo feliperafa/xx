@@ -1,3 +1,11 @@
+.teste1{
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-Right: -50%;
+  transform: translate(-50%, -50%);
+}
 #page-login {
   display: flex;
   justify-content: center;
@@ -82,6 +90,11 @@
       border-radius: 8px;
       width: 50%;
       height: 40px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
     }
     &:hover {
       border: 2px solid #8362f7;
